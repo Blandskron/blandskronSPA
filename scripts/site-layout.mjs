@@ -53,16 +53,12 @@ export function renderSiteLayout(html, { url, legalApproved, year }) {
     '<a href="/#proyectos">Proyectos</a><a href="/#metodo">Metodología</a><a href="/#contacto">Contacto</a></nav></div>' +
     '<div class="footer-details"><nav class="footer-nav" aria-label="Información legal">' +
     '<a href="/privacidad/">Política de privacidad</a><a href="/terminos/">Términos de uso</a></nav>' +
-    '<div class="footer-nav"><a data-contact-link href="mailto:' +
+    '<div class="footer-nav"><a href="https://blandskron.com/">blandskron.com</a><a data-contact-link href="mailto:' +
     email +
     '">' +
     email +
     "</a>" +
-    link(
-      "footer-whatsapp",
-      "",
-      'WhatsApp <span class="external-note">(sitio externo)</span>',
-    ) +
+    link("footer-whatsapp", "", "WhatsApp") +
     '</div></div><p class="copyright">© ' +
     year +
     " BLANDSKRON SpA · Chile</p></div></footer>";
@@ -72,16 +68,15 @@ export function renderSiteLayout(html, { url, legalApproved, year }) {
     ? '<div class="whatsapp-rail">' +
       link(
         "whatsapp-float",
-        "Contactar por WhatsApp (sitio externo)",
-        glyph + '<span aria-hidden="true">WhatsApp · sitio externo</span>',
+        "Contactar por WhatsApp",
+        glyph + '<span aria-hidden="true">WhatsApp</span>',
       ) +
       "</div>"
     : "";
   const contact = link(
     "whatsapp-contact",
     "",
-    glyph +
-      "<span>Contactar por WhatsApp <small>(sitio externo)</small></span>",
+    glyph + "<span>Contactar por WhatsApp</span>",
   );
   const whatsappPrivacy = url
     ? "<h2>Consultas por WhatsApp Business</h2><p>Si eliges este canal, saldrás de BLANDSKRON.cl. WhatsApp puede tratar tu número, los datos del perfil y la información asociada a la comunicación según sus propias políticas. BLANDSKRON recibe lo que compartes con su cuenta empresarial, junto con el número y los datos de perfil que el servicio muestra, para responder a tu consulta. Puedes elegir el correo en su lugar. Abrir el enlace no envía un mensaje automáticamente.</p>"
@@ -93,11 +88,8 @@ export function renderSiteLayout(html, { url, legalApproved, year }) {
     "whatsapp-contact": contact,
     "whatsapp-privacy": whatsappPrivacy,
     "legal-robots": legalApproved
-      ? ""
+      ? '<meta name="robots" content="index, follow" />'
       : '<meta name="robots" content="noindex, follow" />',
-    "legal-status": legalApproved
-      ? ""
-      : '<p class="legal-status"><strong>Borrador.</strong> Pendiente de revisión jurídica antes de su publicación definitiva.</p>',
   };
   return html.replace(/<!-- slot:([\w-]+) -->/g, (_, name) => {
     if (!Object.hasOwn(slots, name))

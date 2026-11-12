@@ -55,6 +55,16 @@ test("móvil: apertura con teclado, Escape, foco y selección", async ({
   await page.keyboard.press("Escape");
   await expect(nav).toBeHidden();
   await expect(trigger).toBeFocused();
+  await page.keyboard.press("Enter");
+  for (const link of await nav.getByRole("link").all()) {
+    await page.keyboard.press("Tab");
+    await expect(link).toBeFocused();
+  }
+  await page.keyboard.press("Tab");
+  await expect(
+    page.getByRole("link", { name: "Explorar soluciones" }),
+  ).toBeFocused();
+  await expect(nav).toBeHidden();
   await trigger.click();
   await nav.getByRole("link", { name: "Proyectos" }).click();
   await expect(nav).toBeHidden();

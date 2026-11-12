@@ -47,10 +47,15 @@ for (const [path, title] of legal) {
           "content",
           "noindex, follow",
         );
-        await expect(
-          page.getByText("Borrador.", { exact: true }),
-        ).toBeVisible();
       }
+      await expect(
+        page.getByText(/Pendiente de revisión jurídica/),
+      ).toHaveCount(0);
+      await expect(
+        page
+          .getByRole("contentinfo")
+          .getByRole("link", { name: "blandskron.com", exact: true }),
+      ).toHaveAttribute("href", "https://blandskron.com/");
       await expect(
         page
           .getByRole("banner")
@@ -85,7 +90,7 @@ for (const [path, title] of legal) {
   }
 }
 
-test("Configuración de WhatsApp: enlace directo, aviso y cero conexiones anticipadas", async ({
+test("Configuración de WhatsApp: enlace directo, nombre accesible y cero conexiones anticipadas", async ({
   page,
   context,
 }) => {
@@ -119,7 +124,8 @@ test("Configuración de WhatsApp: enlace directo, aviso y cero conexiones antici
     expect(button.x).toBeGreaterThan(mainContent.x + mainContent.width);
     await float.focus();
     await expect(float).toBeFocused();
-    await expect(float).toHaveAccessibleName(/sitio externo/);
+    await expect(float).toHaveAccessibleName("Contactar por WhatsApp");
+    await expect(page.getByText(/sitio externo/i)).toHaveCount(0);
     await page.locator(".site-footer").scrollIntoViewIfNeeded();
     const footerTop = (await page.locator(".site-footer").boundingBox()).y;
     const finalButton = await float.boundingBox();

@@ -67,11 +67,6 @@
   font-weight: 700;
   overflow-wrap: anywhere;
 }
-.whatsapp-contact small {
-  display: block;
-  font-weight: 400;
-  font-size: 0.75rem;
-}
 .whatsapp-contact:hover,
 .whatsapp-float:hover {
   background: #6321ac;

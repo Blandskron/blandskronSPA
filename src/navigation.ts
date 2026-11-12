@@ -10,12 +10,29 @@ if (menu && summary) {
   });
 
   menu.addEventListener("click", (event) => {
+    if (
+      event.defaultPrevented ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey ||
+      event.altKey
+    )
+      return;
     if (!(event.target instanceof Element)) return;
     const link = event.target.closest<HTMLAnchorElement>('a[href^="#"]');
     const section = link && document.getElementById(link.hash.slice(1));
     if (!section) return;
     menu.open = false;
     section.focus({ preventScroll: true });
+  });
+
+  menu.addEventListener("focusout", (event) => {
+    if (
+      event.relatedTarget instanceof Node &&
+      !menu.contains(event.relatedTarget)
+    ) {
+      menu.open = false;
+    }
   });
 
   document.addEventListener("pointerdown", (event) => {

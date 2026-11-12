@@ -18,14 +18,6 @@
   color: var(--muted);
   font-size: 0.875rem;
 }
-.legal-status {
-  margin-block: 1.5rem;
-  border-inline-start: 3px solid var(--violet);
-  border-radius: 0.25rem;
-  background: #eee7f7;
-  color: var(--deep);
-  padding: 0.7em 1em;
-}
 .legal-lead {
   font-size: 1.12rem;
 }
