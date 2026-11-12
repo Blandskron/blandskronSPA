@@ -1,0 +1,15 @@
+.error-page {
+  background: radial-gradient(
+    ellipse at top right,
+    var(--deep),
+    var(--black) 65%
+  );
+  color: var(--white);
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding-block: 48px;
+}
+.error-page .button {
+  margin-top: 26px;
+}

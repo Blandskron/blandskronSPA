@@ -1,0 +1,27 @@
+/* Brand statement */
+.statement {
+  background: #fff;
+  overflow: hidden;
+}
+.statement-inner {
+  border-top: 1px solid #e8e2ee;
+  text-align: center;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+.statement-quote {
+  font: 750 clamp(2.1875rem, 5.7vw, 4.875rem)/1.16 var(--display);
+  letter-spacing: -0.075em;
+  max-width: 990px;
+  margin: 24px auto;
+}
+.statement-quote span {
+  color: var(--violet);
+}
+.statement-caption {
+  max-width: 490px;
+  margin: auto;
+  font-size: 0.8125rem;
+  line-height: 1.9;
+  color: #777080;
+}

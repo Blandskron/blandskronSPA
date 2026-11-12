@@ -1,0 +1,243 @@
+:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 3px var(--white),
+    0 0 0 6px var(--black);
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}
+.skip-link {
+  position: absolute;
+  z-index: 50;
+  top: 12px;
+  left: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--deep);
+  transform: translateY(-150%);
+}
+.skip-link:focus {
+  transform: none;
+}
+.mobile-menu {
+  display: none;
+}
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #796986;
+  border-radius: 10px;
+  color: var(--white);
+  cursor: pointer;
+  list-style: none;
+}
+.menu-toggle::-webkit-details-marker {
+  display: none;
+}
+.menu-icon {
+  width: 15px;
+  height: 12px;
+  border-block: 2px solid currentColor;
+  background: linear-gradient(currentColor, currentColor) center / 100% 2px
+    no-repeat;
+}
+.mobile-menu[open] .menu-toggle {
+  background: #30213f;
+}
+.mobile-menu[open] .mobile-nav {
+  display: flex;
+}
+.button:active {
+  transform: none;
+}
+.button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.card-link:hover,
+.project-link:hover,
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+.project-link,
+.card-link,
+.footer-nav a {
+  min-height: 24px;
+}
+.project-link,
+.card-link {
+  align-self: start;
+}
+.hero {
+  background-color: var(--black);
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 4.55vw, 4.35rem);
+}
+.hero h1 em {
+  display: block;
+}
+.hero .core-logo {
+  display: block;
+  width: 82px;
+  height: auto;
+}
+.footnote-divider {
+  color: #8a8194;
+}
+.thesis-list {
+  padding: 0;
+  list-style: none;
+}
+.thesis .eyebrow {
+  color: #cfb2ef;
+}
+.contact .eyebrow {
+  color: #d9c0f7;
+}
+.diagram-label {
+  margin-bottom: 13px;
+}
+[data-centered] {
+  text-align: center;
+}
+.flow-split,
+.search-results {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.project-visual .terminal,
+.search-ui {
+  transform: none;
+}
+.project-visual {
+  overflow-wrap: anywhere;
+}
+.project .search-line > span {
+  font-size: 1.0625rem;
+}
+.contact-meta {
+  line-height: 1.5;
+}
+.service-card .card-link {
+  padding-top: 12px;
+  padding-bottom: 3px;
+}
+.service-card.wide .ai-art {
+  top: auto;
+  bottom: 30px;
+}
+@media (max-width: 1050px) {
+  .hero h1 {
+    font-size: clamp(2.5rem, 5.2vw, 3.75rem);
+  }
+  .header-inner {
+    gap: 14px;
+  }
+  .header-cta {
+    padding-inline: 9px;
+  }
+}
+@media (max-width: 900px) {
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #17101f;
+    border-bottom: 1px solid #392948;
+    padding: 12px max(24px, calc((100% - var(--max)) / 2)) 16px;
+    flex-direction: column;
+    box-shadow: 0 20px 36px #0005;
+  }
+  .mobile-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--white);
+    border-bottom: 1px solid #ffffff22;
+    font-size: 0.875rem;
+  }
+  .mobile-nav a:hover {
+    text-decoration: underline;
+  }
+}
+@media (max-width: 760px) {
+  .hero h1 {
+    font-size: clamp(2.3rem, 8vw, 3.75rem);
+  }
+  .hero-main {
+    padding-top: 115px;
+  }
+  .service-card.wide .ai-art {
+    opacity: 0.36;
+    bottom: 15px;
+  }
+  .project {
+    padding: clamp(20px, 5vw, 35px);
+  }
+}
+@media (max-width: 440px) {
+  .hero h1 {
+    font-size: clamp(2.2rem, 9.4vw, 2.6rem);
+  }
+  .system-visual {
+    margin-top: 28px;
+  }
+  .center-core {
+    width: 118px;
+    height: 118px;
+  }
+  .hero .core-logo {
+    width: 54px;
+  }
+  .node-b {
+    left: -5%;
+    top: 20%;
+  }
+  .node-c {
+    right: -5%;
+    bottom: 11%;
+  }
+  .code-art {
+    display: none;
+  }
+  .service-card.medium {
+    min-height: 225px;
+  }
+  .service-card.small {
+    min-height: 230px;
+  }
+  .mini-flow {
+    bottom: 16px;
+  }
+  .diagram-head {
+    gap: 8px;
+  }
+  .search-results {
+    grid-template-columns: 1fr;
+  }
+}
+@media (forced-colors: active) {
+  .hero h1 em {
+    background: none;
+    color: CanvasText;
+  }
+  :focus-visible {
+    outline: 2px solid Highlight;
+  }
+}

@@ -1,0 +1,239 @@
+@media (max-width: 1050px) {
+  .hero-main {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+  }
+  .system-visual {
+    transform: scale(0.88);
+  }
+  .desktop-nav {
+    gap: 18px;
+    margin-right: 10px;
+  }
+  .service-card.wide,
+  .service-card.medium {
+    grid-column: span 6;
+  }
+  .service-card.small {
+    grid-column: span 4;
+  }
+  .ai-art {
+    opacity: 0.6;
+    right: -60px;
+  }
+  .thesis-grid {
+    gap: 35px;
+  }
+  .process-layout {
+    gap: 45px;
+  }
+}
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 38px, var(--max));
+  }
+  .site-header {
+    height: 70px;
+  }
+
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .hero-main {
+    display: block;
+    min-height: auto;
+    padding-top: 145px;
+    padding-bottom: 70px;
+  }
+  .hero h1 {
+    font-size: clamp(2.75rem, 10vw, 4.25rem);
+    max-width: 630px;
+  }
+  .hero-lead {
+    font-size: 0.875rem;
+  }
+  .system-visual {
+    width: min(490px, 100%);
+    margin: 30px auto 0;
+    transform: scale(0.92);
+  }
+  .strip-inner {
+    padding: 25px 0;
+    display: block;
+    min-height: auto;
+  }
+  .strip-inner > span {
+    display: block;
+    max-width: none;
+    margin-bottom: 20px;
+  }
+  .strip-tags {
+    gap: 14px 24px;
+  }
+  .section-pad {
+    padding: 79px 0;
+  }
+  .section-heading h2,
+  .big-title {
+    font-size: clamp(2.125rem, 8vw, 3.125rem);
+  }
+  .intro-head {
+    display: block;
+  }
+  .intro-head .side-copy {
+    margin-top: 22px;
+  }
+  .bento {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 11px;
+    margin-top: 33px;
+  }
+  .service-card.wide,
+  .service-card.medium,
+  .service-card.small {
+    grid-column: span 2;
+    min-height: 275px;
+  }
+  .service-card.small {
+    min-height: 215px;
+  }
+  .service-card {
+    padding: 24px;
+  }
+  .service-card.wide {
+    min-height: 330px;
+  }
+  .service-card.medium {
+    min-height: 300px;
+  }
+  .service-card .ai-art {
+    right: 6px;
+    top: 55px;
+    transform: scale(0.85);
+  }
+  .code-art {
+    right: 10px;
+    bottom: 20px;
+  }
+  .thesis-grid,
+  .process-layout,
+  .contact-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+  .process-layout .section-heading {
+    position: static;
+  }
+  .project-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .project {
+    min-height: 365px;
+  }
+  .work-header {
+    align-items: start;
+    flex-direction: column;
+  }
+  .statement-inner {
+    padding: 65px 0;
+  }
+  .contact-inner {
+    padding-top: 82px;
+    padding-bottom: 80px;
+  }
+  .footer-inner {
+    align-items: start;
+    flex-direction: column;
+  }
+  .footer-nav {
+    gap: 17px;
+  }
+  .diagram-body {
+    padding: 19px;
+  }
+}
+@media (max-width: 440px) {
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+  .hero-actions .button {
+    width: 100%;
+  }
+  .hero-footnote {
+    flex-wrap: wrap;
+    line-height: 1.8;
+  }
+  .system-visual {
+    margin-top: 10px;
+    transform: scale(0.86);
+  }
+  .node-a {
+    right: -7%;
+  }
+  .node-b {
+    left: -9%;
+  }
+  .node-c {
+    right: -8%;
+  }
+  .node-d {
+    left: 1%;
+  }
+  .orbit-node {
+    min-width: 112px;
+    padding: 10px;
+  }
+  .orbit-node strong {
+    font-size: 0.625rem;
+  }
+  .center-core {
+    width: 145px;
+    height: 145px;
+  }
+  .service-card .ai-art {
+    right: -55px;
+  }
+  .service-card.wide h3 {
+    max-width: 210px;
+  }
+  .service-card h3 {
+    font-size: 1.4375rem;
+  }
+  .code-art {
+    max-width: 47%;
+  }
+  .flow-split {
+    gap: 5px;
+  }
+  .flow-split .flow-box {
+    padding: 12px;
+  }
+  .step {
+    grid-template-columns: 35px 1fr 17px;
+  }
+  .contact-aside {
+    padding: 23px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+@media (max-width: 360px) {
+  .header-inner {
+    gap: 8px;
+  }
+  .menu-toggle {
+    padding-inline: 8px;
+  }
+}

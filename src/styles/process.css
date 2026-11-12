@@ -1,0 +1,49 @@
+/* Process */
+.process {
+  background: #f7f5f9;
+}
+.process-layout {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 90px;
+}
+.process-layout .section-heading {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+.process-layout .section-heading h2 {
+  font-size: clamp(2.25rem, 4vw, 3.1875rem);
+}
+.steps {
+  border-top: 1px solid #dad3e1;
+}
+.step {
+  display: grid;
+  grid-template-columns: 65px 1fr 22px;
+  gap: 14px;
+  padding: 28px 0;
+  border-bottom: 1px solid #dad3e1;
+  align-items: start;
+}
+.step .step-number {
+  font: 0.6875rem var(--mono);
+  color: #79519c;
+  padding-top: 5px;
+}
+.step h3 {
+  font: 750 1.3125rem var(--display);
+  letter-spacing: -0.04em;
+  margin: 0 0 9px;
+}
+.step p {
+  font-size: 0.8125rem;
+  color: #706777;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 440px;
+}
+.step .check {
+  color: #8a53bb;
+  font-size: 1.3125rem;
+}

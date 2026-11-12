@@ -1,0 +1,112 @@
+/* CTA */
+.contact {
+  background: #0e0a13;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.contact:before {
+  content: "";
+  position: absolute;
+  width: 900px;
+  height: 850px;
+  background: radial-gradient(circle, rgba(92, 29, 160, 0.35), transparent 65%);
+  right: -260px;
+  top: -400px;
+}
+.contact-inner {
+  position: relative;
+  padding-top: 115px;
+  padding-bottom: 110px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 90px;
+  align-items: end;
+}
+.contact h2 {
+  font: 750 clamp(2.5rem, 5.2vw, 4.25rem)/1.12 var(--display);
+  letter-spacing: -0.065em;
+  margin: 24px 0;
+}
+.contact h2 span {
+  color: #b38be0;
+}
+.contact p {
+  font-size: 0.875rem;
+  line-height: 1.9;
+  color: #aea3ba;
+  max-width: 530px;
+  margin: 0;
+}
+.contact-aside {
+  border: 1px solid #493654;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 29px;
+}
+.contact-aside .micro {
+  color: #ae8dd5;
+  font: 0.5625rem var(--mono);
+  letter-spacing: 1px;
+}
+.contact-aside h3 {
+  font: 700 1.25rem var(--display);
+  margin: 17px 0 10px;
+}
+.contact-aside p {
+  font-size: 0.75rem;
+  margin-bottom: 22px;
+}
+.email-link {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  background: #fff;
+  color: #291334;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.email-link:hover {
+  background: #ece0fa;
+}
+.contact-meta {
+  margin-top: 20px;
+  font: 0.625rem var(--mono);
+  color: #92849b;
+}
+footer {
+  background: #0e0a13;
+  border-top: 1px solid #2a2232;
+  color: #908599;
+  padding: 30px 0 42px;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+}
+.footer-logo {
+  width: 153px;
+  opacity: 0.9;
+}
+.footer-nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.footer-nav a {
+  font-size: 0.6875rem;
+}
+.footer-nav a:hover {
+  color: #fff;
+}
+.copyright {
+  font: 0.5625rem var(--mono);
+  margin-top: 26px;
+  color: #9b90a5;
+}

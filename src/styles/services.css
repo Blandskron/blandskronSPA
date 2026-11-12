@@ -1,0 +1,229 @@
+/* Light intro */
+.intro {
+  background: var(--paper);
+}
+.intro-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: end;
+}
+.intro-head h2 {
+  margin-bottom: 0;
+}
+.intro-head .side-copy {
+  line-height: 1.85;
+  color: var(--muted);
+  font-size: 1rem;
+  padding-bottom: 4px;
+}
+.emphasis-violet {
+  color: var(--violet);
+}
+/* Services bento */
+.bento {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: minmax(235px, auto);
+  gap: 14px;
+}
+.service-card {
+  background: #fff;
+  border: 1px solid #e9e5ed;
+  border-radius: var(--radius-card);
+  position: relative;
+  overflow: hidden;
+  padding: 29px 29px 27px;
+  min-height: 248px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(46, 11, 89, 0.08);
+  border-color: #cec0e1;
+}
+.service-card.wide {
+  grid-column: span 7;
+  min-height: 370px;
+}
+.service-card.medium {
+  grid-column: span 5;
+  min-height: 370px;
+}
+.service-card.small {
+  grid-column: span 4;
+}
+.service-card .number {
+  font: 500 0.625rem var(--mono);
+  color: #676071;
+  letter-spacing: 1px;
+}
+.service-card h3 {
+  font: 750 1.5625rem/1.2 var(--display);
+  letter-spacing: -0.055em;
+  margin: 17px 0 10px;
+}
+.service-card p {
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: #716b78;
+  max-width: 290px;
+  margin: 0;
+}
+.service-card .card-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--violet);
+  padding-top: 23px;
+}
+.service-card .card-link span {
+  font-size: 1.1875rem;
+}
+.service-card.dark {
+  background: #171020;
+  color: #fff;
+  border-color: #392a47;
+}
+.service-card.dark .number {
+  color: #baa4d0;
+}
+.service-card.dark p {
+  color: #b2a5be;
+}
+.service-card.dark .card-link {
+  color: #dac0fd;
+}
+.service-card .icon-square {
+  height: 39px;
+  width: 39px;
+  border-radius: var(--radius-control);
+  border: 1px solid #e7ddf0;
+  background: #f6f1fb;
+  display: grid;
+  place-items: center;
+  color: var(--violet);
+  font-size: 1.1875rem;
+  margin-bottom: 2px;
+}
+.service-card.dark .icon-square {
+  background: #32213f;
+  color: #c6a7ed;
+  border-color: #4b3460;
+}
+.art {
+  pointer-events: none;
+  position: absolute;
+}
+.ai-art {
+  right: 19px;
+  top: 68px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(143, 86, 219, 0.14),
+    transparent 68%
+  );
+}
+.ai-art .ring {
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(145, 95, 211, 0.27);
+  border-radius: 50%;
+}
+.ai-art .ring:nth-child(2) {
+  inset: 47px;
+  border-style: dashed;
+}
+.ai-art .ring:nth-child(3) {
+  inset: 75px;
+  background: radial-gradient(circle, #8550c2, #40225b);
+  box-shadow: 0 0 26px rgba(164, 105, 226, 0.3);
+}
+.ai-art .grain-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: #b99ede;
+  border-radius: 50%;
+  top: 35px;
+  left: 27px;
+}
+.code-art {
+  right: 24px;
+  bottom: 36px;
+  width: 226px;
+  max-width: 55%;
+  padding: 17px 14px;
+  background: #21192b;
+  border: 1px solid #443151;
+  border-radius: 12px;
+  transform: rotate(-5deg);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+}
+.code-art .dots {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+.code-art .dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #80668e;
+}
+.code-art code {
+  display: block;
+  color: #cab8d9;
+  font: 0.5625rem/2 var(--mono);
+}
+.code-art code span {
+  color: #ae77f0;
+}
+.mini-flow {
+  position: absolute;
+  right: 25px;
+  bottom: 29px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.mini-flow i {
+  font: 0.5625rem var(--mono);
+  background: #f0eaf7;
+  color: #714a9b;
+  border: 1px solid #e5d8f4;
+  border-radius: 7px;
+  padding: 8px;
+}
+.mini-flow b {
+  font-size: 0.8125rem;
+  color: #9a7ab7;
+}
+.small .card-link {
+  margin-top: 24px;
+}
+.mini-flow {
+  position: static;
+  align-self: end;
+  margin-top: auto;
+  padding-top: 14px;
+}
+.service-card.wide .ai-art {
+  z-index: 0;
+}
+.service-card.wide > :not(.art) {
+  position: relative;
+  z-index: 1;
+}

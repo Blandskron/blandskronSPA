@@ -1,0 +1,19 @@
+:root {
+  --violet: #4a148c;
+  --deep: #2e0b59;
+  --accent: #8b5cf6;
+  --lavender: #c4b5fd;
+  --white: #ffffff;
+  --black: #090909;
+  --ink: #15121b;
+  --muted: #686471;
+  --paper: #f8f7fa;
+  --line: #e6e2ec;
+  --max: 1200px;
+  --radius-card: 21px;
+  --radius-control: 11px;
+  --section-space: clamp(4.9375rem, 9vw, 7.75rem);
+  --font: "Inter Variable", system-ui, -apple-system, sans-serif;
+  --display: "Manrope Variable", var(--font);
+  --mono: "JetBrains Mono Variable", monospace;
+}
