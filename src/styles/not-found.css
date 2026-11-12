@@ -6,10 +6,16 @@
   );
   color: var(--white);
   min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding-block: 48px;
+  display: flex;
+  flex-direction: column;
 }
-.error-page .button {
-  margin-top: 26px;
+.error-page main {
+  flex: 1;
+  padding-block: clamp(3rem, 9vw, 8rem);
+}
+.error-page h1 {
+  font-size: clamp(2.25rem, 6vw, 4.6rem);
+}
+.error-page .hero-actions {
+  align-items: start;
 }

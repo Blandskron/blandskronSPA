@@ -12,12 +12,17 @@ try {
   });
   const categories = ["performance", "accessibility", "best-practices", "seo"];
   await mkdir("docs/lighthouse", { recursive: true });
-  for (const [name, config] of [
-    ["mobile", undefined],
-    ["desktop", desktopConfig],
-  ]) {
+  const targets = [
+    ["mobile", "/", undefined],
+    ["desktop", "/", desktopConfig],
+  ];
+  if (process.argv.includes("--legal")) {
+    targets.push(["privacidad-mobile", "/privacidad/", undefined]);
+    targets.push(["terminos-mobile", "/terminos/", undefined]);
+  }
+  for (const [name, path, config] of targets) {
     const result = await lighthouse(
-      url,
+      new URL(path, url).href,
       {
         port: 9222,
         output: ["html", "json"],

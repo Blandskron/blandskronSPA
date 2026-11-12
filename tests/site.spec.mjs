@@ -78,7 +78,9 @@ test("sin JavaScript: servicios, proyectos y menú nativo", async ({
     .click();
   await expect(page.getByRole("heading", { name: "Agnara." })).toBeInViewport();
   await expect(
-    page.getByRole("link", { name: /contacto@blandskron\.com/ }),
+    page
+      .locator("main")
+      .getByRole("link", { name: /contacto@blandskron\.com/ }),
   ).toBeVisible();
   await page.close();
 });

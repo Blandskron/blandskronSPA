@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { legalPaths } from "./site-layout.mjs";
 
 const root = fileURLToPath(new URL("../dist", import.meta.url));
 const mime = {
@@ -31,22 +32,31 @@ export async function startPreview(port = 4173) {
   );
   const notFound = await readFile(resolve(root, "404.html"));
   const server = createServer(async (req, res) => {
+    if (req.method !== "GET" && req.method !== "HEAD") {
+      res.writeHead(405, { ...generalHeaders, Allow: "GET, HEAD" }).end();
+      return;
+    }
     let pathname;
+    let search;
     try {
-      pathname = decodeURIComponent(
-        new URL(req.url ?? "/", "http://localhost").pathname,
-      );
+      const url = new URL(req.url ?? "/", "http://localhost");
+      pathname = decodeURIComponent(url.pathname);
+      search = url.search;
     } catch {
       res.writeHead(400).end();
       return;
     }
-    if (pathname === "/index.html") {
-      res.writeHead(301, { Location: "/" }).end();
+    const canonical = ["/", ...legalPaths].find(
+      (route) =>
+        pathname === route + "index.html" || pathname === route.slice(0, -1),
+    );
+    if (canonical) {
+      res.writeHead(301, { Location: canonical + search }).end();
       return;
     }
     const file = resolve(
       root,
-      "." + (pathname === "/" ? "/index.html" : pathname),
+      "." + (pathname.endsWith("/") ? pathname + "index.html" : pathname),
     );
     let status = 404;
     let content = notFound;

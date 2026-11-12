@@ -1,0 +1,122 @@
+.subpage-header {
+  background: var(--black);
+  color: var(--white);
+  border-bottom: 1px solid #2a2232;
+}
+.subpage-header .container {
+  min-height: 4.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding-block: 0.5rem;
+}
+.subpage-header a:not(.logo) {
+  min-height: 44px;
+  display: inline-flex;
+  gap: 0.4em;
+  align-items: center;
+}
+.subpage-header a:not(.logo):hover {
+  text-decoration: underline;
+}
+.footer-brand p {
+  margin: 0.75rem 0 0;
+  max-width: 36ch;
+  color: #b8adbf;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+.footer-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #382d43;
+}
+.site-footer .footer-nav {
+  gap: 0.35rem 1.25rem;
+}
+.site-footer .footer-nav a {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25em;
+  min-height: 30px;
+  color: #c3b7cc;
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+.site-footer .footer-nav a:hover {
+  color: var(--white);
+}
+.whatsapp-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  padding: 0.55rem 0.7rem;
+  margin-top: 0.75rem;
+  border-radius: var(--radius-control);
+  background: var(--violet);
+  color: var(--white);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.whatsapp-contact small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+.whatsapp-contact:hover,
+.whatsapp-float:hover {
+  background: #6321ac;
+}
+.whatsapp-contact img {
+  flex: none;
+}
+.whatsapp-rail {
+  display: none;
+}
+@media (min-width: 1360px) {
+  /* The 48px control fits in the outer gutter; its flow position is above the footer. */
+  .whatsapp-rail {
+    display: flex;
+    position: sticky;
+    z-index: 10;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    justify-content: flex-end;
+    margin-top: -48px;
+    padding-right: max(16px, env(safe-area-inset-right));
+    pointer-events: none;
+  }
+  .whatsapp-float {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--lavender);
+    border-radius: 50%;
+    background: var(--violet);
+    color: var(--white);
+    pointer-events: auto;
+  }
+  .whatsapp-float span {
+    display: none;
+    position: absolute;
+    right: 72px;
+    padding: 0.5em 0.75em;
+    border-radius: 8px;
+    background: var(--deep);
+    color: var(--white);
+    font-size: 0.8125rem;
+  }
+  .whatsapp-float:focus-visible span,
+  .whatsapp-float:hover span {
+    display: block;
+  }
+}

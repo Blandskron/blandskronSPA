@@ -13,8 +13,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: npm run format:check
-      - run: npm run lint
-      - run: npm run build
-      - run: npm run validate:html
-      - run: npm test
+      - run: npm run check
+      - run: npm audit
+      - name: Verificar que el sitio funciona sin WhatsApp configurado
+        env:
+          BLANDSKRON_WHATSAPP: "off"
+        run: |
+          npm run build
+          npm test -- --grep "Configuración de WhatsApp"

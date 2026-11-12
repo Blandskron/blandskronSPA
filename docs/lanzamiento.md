@@ -18,3 +18,12 @@ El sitio publicado no se modificó. La compilación local está en **dist/** y s
 ## Analítica opcional
 
 El lanzamiento funciona sin scripts de medición ni cookies no esenciales. Si se aprueba analítica, seleccionar proveedor e identificador reales, revisar los requisitos aplicables al tratamiento de datos en Chile y adaptar CSP y aviso de privacidad antes de activar. El selector [data-contact-link] identifica los enlaces de correo para un futuro evento contact_click. Un clic indica intención de contacto; no confirma el envío ni la recepción de un mensaje. Registrar solo el tipo de acción y la ubicación del enlace, sin contenido del correo. Medir LCP, INP y CLS de campo por separado del informe de laboratorio.
+
+## Verificaciones de esta revisión antes de cPanel
+
+- [ ] Aprobar textos legales y expediente de tratamientos; comprobar la fecha efectiva de la reforma en BCN y Diario Oficial. Cambiar legalApproved a true, recompilar y confirmar 200, canonical, sitemap y ausencia de noindex en las rutas aprobadas.
+- [ ] Confirmar que la cuenta empresarial de WhatsApp recibe y atiende consultas. Revisar accesos, respaldo y retención del chat. Si no se habilita el canal, compilar con whatsapp en null.
+- [ ] En cPanel, confirmar Document Root, respaldar contenido y .htaccess, y probar en staging con acceso restringido. Copiar solo HTML y assets, incluidas las carpetas privacidad/ y terminos/. Mantener los archivos privados fuera de la raíz y conservar .well-known si lo necesita la renovación de TLS.
+- [ ] Fusionar reglas LiteSpeed; comprobar 301 o 308 de HTTP/www, /index.html y alias legales conservando consulta; confirmar que el destino HTTPS no crea bucles. Verificar CSP sin bloqueos de recursos, ausencia de contenido mixto, gzip/Brotli y caché adecuada. Activar HSTS solo después de las pruebas, sin incluir subdominios ni preload por defecto.
+- [ ] Consultar una ruta y un asset inexistentes: esperar 404 real con el documento corporativo. Para mantenimiento, configurar 503 y Retry-After si el proveedor lo admite. No simular 403/405 o 5xx mediante redirecciones 200.
+- [ ] En un perfil limpio, comprobar cookies, almacenamiento y solicitudes al cargar portada, documentos y footer. Realizar una comprobación en el dispositivo de WhatsApp sin enviar datos de terceros. Confirmar logs, proveedores, ubicación y plazos con sus administradores.
